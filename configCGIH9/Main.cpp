@@ -24,11 +24,11 @@ const GLchar* fragmentShaderSource =
 	"out vec4 color;\n"
 	"void main()\n"
 	"{\n"
-	"color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+	"color = vec4(4.0f, 0.3f, 0.5f, 1.0f);\n"
 	"}\n\0"
 };
 
-// Funciones de configuracion del shader
+// Funciones de configuracion del shader "color = vec4(0.5f, 1.0f, 1.0f, 0.2f);\n"
 
 void CrearShader(void);
 
@@ -79,11 +79,12 @@ int main() {
 	// Define las dimensiones del viewport
 	glViewport(0, 0, screenWidth, screenHeight);
 
-	//CrearShader();
+	CrearShader();
 
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] =
 	{
+		//-0.5f, -0.5f, 0.0f, // Left
 		-0.5f, -0.5f, 0.0f, // Left
 		0.5f, -0.5f, 0.0f, // Right
 		0.0f,  0.5f, 0.0f  // Top
@@ -119,7 +120,8 @@ int main() {
 
 		// Render
 		// Clear the colorbuffer
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		//glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClearColor(0.8f, 0.2f, 2.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 
